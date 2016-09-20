@@ -34,6 +34,19 @@ to the clipboard.
     Status: 200
     Content: b'"Valid sensor and key"'
 
+- Try posting dummy scalar values:
+
+
+    $ ./post_dummy_dht22.py
+    ----- CONFIG -----
+    url: https://www.senio.io/publish/foo
+    key: 7a105329-06e8-4c6d-9215-e31632feefc8
+    -------------------
+    Temp: 22.0 Humidity: 50.0
+    Status: 201
+    Content:     b'{"timestamp":1474383378795.2,"data":{"temp":22,"humidity":50},"tags":null}'
+
+
 
 
 1 post_dht22.py: Post scalar measurement data

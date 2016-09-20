@@ -39,15 +39,27 @@ to the clipboard.
 
     $ ./post_dummy_dht22.py
     ----- CONFIG -----
-    url: https://www.senio.io/publish/foo
-    key: 7a105329-06e8-4c6d-9215-e31632feefc8
+    url: https://www.senio.io/publish/rpi
+    key: aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
     -------------------
     Temp: 22.0 Humidity: 50.0
     Status: 201
     Content:     b'{"timestamp":1474383378795.2,"data":{"temp":22,"humidity":50},"tags":null}'
 
+- Try post an image **NOTE THE ARGUMENT**
 
 
+    $ ./post_image.py img720x480.jpg
+    ----- CONFIG -----
+    url: https://www.senio.io/publish/rpi
+    key: aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+    -------------------
+    image file: img720x480.jpg
+    Status: 201
+    Content:     b'{"timestamp":1474383509403.66,"data":{"cam1":"98c499c05bc8fcc440f8d4e5b7a74e80    ce6f3ae1"},"tags":null}'
+
+
+-
 
 1 post_dht22.py: Post scalar measurement data
 1 post_photo.py: Post an image

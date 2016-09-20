@@ -64,8 +64,8 @@ to the clipboard.
 
     $ ./post_dht22.py
     ----- CONFIG -----
-    url: https://www.senio.io/publish/foo
-    key: 7a105329-06e8-4c6d-9215-e31632feefc8
+    url: https://www.senio.io/publish/rpi
+    key: aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
     -------------------
     Temp: 26.399999618530273 Humidity: 31.700000762939453
     Status: 201
@@ -76,8 +76,8 @@ to the clipboard.
 
     $ ./post_pi_cam.py
     ----- CONFIG -----
-    url: https://www.senio.io/publish/foo
-    key: 7a105329-06e8-4c6d-9215-e31632feefc8
+    url: https://www.senio.io/publish/rpi
+    key: aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
     -------------------
     Status: 201
     Content:     b'{"timestamp":1474383732160.25,"data":{"cam1":"b6d0125a6be3e4d59ac437fb3b8c98ec    529853f6"},"tags":null}'

@@ -46,7 +46,7 @@ to the clipboard.
     Status: 201
     Content:     b'{"timestamp":1474383378795.2,"data":{"temp":22,"humidity":50},"tags":null}'
 
-- Try post an image **NOTE THE ARGUMENT**
+- Try post an image **note the file argument**
 
 
     $ ./post_image.py img720x480.jpg
@@ -59,8 +59,25 @@ to the clipboard.
     Content:     b'{"timestamp":1474383509403.66,"data":{"cam1":"98c499c05bc8fcc440f8d4e5b7a74e80    ce6f3ae1"},"tags":null}'
 
 
--
+- Post data from a DHT22 sensor once per minute:
 
-1 post_dht22.py: Post scalar measurement data
-1 post_photo.py: Post an image
-1 post_pi_cam.py: Post the image form the Pi camera once per minute
+
+    $ ./post_dht22.py
+    ----- CONFIG -----
+    url: https://www.senio.io/publish/foo
+    key: 7a105329-06e8-4c6d-9215-e31632feefc8
+    -------------------
+    Temp: 26.399999618530273 Humidity: 31.700000762939453
+    Status: 201
+    Content:     b'{"timestamp":1474383665737.89,"data":{"humidity":31.700000762939453,"temp":26.    399999618530273},"tags":null}'
+
+- Post an image from the Pi camera every 10 minutes:
+
+
+    $ ./post_pi_cam.py
+    ----- CONFIG -----
+    url: https://www.senio.io/publish/foo
+    key: 7a105329-06e8-4c6d-9215-e31632feefc8
+    -------------------
+    Status: 201
+    Content:     b'{"timestamp":1474383732160.25,"data":{"cam1":"b6d0125a6be3e4d59ac437fb3b8c98ec    529853f6"},"tags":null}'

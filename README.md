@@ -4,26 +4,27 @@ This repo contains Python3 example code for posting sensor data to Senio.
 
 ## Getting started
 
-- Clone this repo to you Raspberry Pi:
+Clone this repo to you Raspberry Pi:
 
     $ git clone https://github.com/bjnortier/senio-client.git
 
-- Create your sensor on [https://www.senio.io](senio.io). The rest of this document assumes you have a sensor with "temp" and "humidity" scalar fields, and a "cam1" image field defined on a sensor called "rpi". Copy the device key
+Create your sensor on [https://www.senio.io](senio.io). The rest of this document assumes you have a sensor with "temp" and "humidity" scalar fields, and a "cam1" image field defined on a sensor called "rpi". Copy the device key
 to the clipboard.
 
-- Copy the senio.ini.UPDATE_ME_WITH_SENSOR_VALUES to senio.ini
+Copy the senio.ini.UPDATE_ME_WITH_SENSOR_VALUES to senio.ini:
 
 
     $ cp senio.ini.UPDATE_ME_WITH_SENSOR_VALUES senio.ini
 
-- Update the sensor name and key to the values from senio.io:
+Update the sensor name and key to the values from senio.io:
 
 
     [sensor]
     name=rpi
     key=aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
 
-- Check your setup by running the check.py script:
+
+Check your setup by running the check.py script:
 
 
     $ ./check_config.py
@@ -34,7 +35,7 @@ to the clipboard.
     Status: 200
     Content: b'"Valid sensor and key"'
 
-- Try posting dummy scalar values:
+Post dummy scalar values:
 
 
     $ ./post_dummy_dht22.py
@@ -46,7 +47,8 @@ to the clipboard.
     Status: 201
     Content:     b'{"timestamp":1474383378795.2,"data":{"temp":22,"humidity":50},"tags":null}'
 
-- Try post an image **note the file argument**
+
+Post an image **note the file argument**:
 
 
     $ ./post_image.py img720x480.jpg
@@ -59,7 +61,7 @@ to the clipboard.
     Content:     b'{"timestamp":1474383509403.66,"data":{"cam1":"98c499c05bc8fcc440f8d4e5b7a74e80    ce6f3ae1"},"tags":null}'
 
 
-- Post data from a DHT22 sensor once per minute:
+Post data from a DHT22 sensor once per minute:
 
 
     $ ./post_dht22.py
@@ -71,7 +73,8 @@ to the clipboard.
     Status: 201
     Content:     b'{"timestamp":1474383665737.89,"data":{"humidity":31.700000762939453,"temp":26.    399999618530273},"tags":null}'
 
-- Post an image from the Pi camera every 10 minutes:
+
+Post an image from the Pi camera every 10 minutes:
 
 
     $ ./post_pi_cam.py

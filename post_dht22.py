@@ -3,11 +3,11 @@ import requests
 import sys
 import Adafruit_DHT
 
+from senio_config import SenioConfig
+config = SenioConfig()
+
 sensor = Adafruit_DHT.DHT22
 pin = 7
-
-URL = 'https://www.senio.io/publish/rpi_demo'
-UUID = '48fd7f79-66e9-42ff-b437-9759d38a8f04'
 
 while True:
     humidity, temp = Adafruit_DHT.read_retry(sensor, pin)
@@ -17,9 +17,9 @@ while True:
 
     try:
         response = requests.post(
-            URL,
+            config.url,
             headers={
-                'Authorization': 'Bearer {}'.format(UUID)
+                'Authorization': 'Bearer {}'.format(config.key)
             },
             json={
                 'timestamp': time.time()*1000,

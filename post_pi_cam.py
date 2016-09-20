@@ -4,8 +4,8 @@ import requests
 import json
 import sys
 
-URL = 'https://www.senio.io/publish/rpi_demo'
-UUID = '48fd7f79-66e9-42ff-b437-9759d38a8f04'
+from senio_config import SenioConfig
+config = SenioConfig()
 
 while True:
     camera = picamera.PiCamera()
@@ -15,9 +15,9 @@ while True:
 
     try:
         response = requests.post(
-            URL,
+            config.url,
             headers={
-                'Authorization': 'Bearer {}'.format(UUID)
+                'Authorization': 'Bearer {}'.format(config.key)
             },
             files={'cam1': open('img720x480.jpg', 'rb')},
             data={

@@ -1,0 +1,19 @@
+# For help with python systemd services, see
+# http://stackoverflow.com/questions/13069634/python-daemon-and-systemd-service
+
+[Unit]
+Description=Senio service
+Wants=network.target
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/senio-client/
+ExecStart=/home/pi/senio-client/post_pi_cam.py
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target

@@ -7,6 +7,7 @@ Wants=network.target
 After=network.target
 
 [Service]
+Environment=PYTHONUNBUFFERED=true
 Type=simple
 User=pi
 Group=pi

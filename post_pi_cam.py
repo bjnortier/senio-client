@@ -12,6 +12,7 @@ config = SenioConfig()
 while True:
     camera = picamera.PiCamera()
     camera.vflip = True
+    camera.hflip = True
     camera.capture('img720x480.jpg')
     camera.close()
 
@@ -21,7 +22,9 @@ while True:
             headers={
                 'Authorization': 'Bearer {}'.format(config.key)
             },
-            files={'cam1': open('img720x480.jpg', 'rb')},
+            files={
+                config.values['camera_field']: open('img720x480.jpg', 'rb')
+            },
             data={
                 'json': json.dumps({
                     'timestamp': time.time()*1000

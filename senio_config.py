@@ -18,3 +18,4 @@ class SenioConfig:
         print('-------------------')
         self.url = url
         self.key = key
+        self.values = config['sensor']
